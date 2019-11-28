@@ -18,7 +18,6 @@ void torusCircle(float inradius,float outradius,float cx,float cy){
 	float x,y;
 	glLineWidth(5);
 	glColor3f(1,0,0.2);
-//	glColor3f(1,1,0);
 	glBegin(GL_LINE_STRIP);
 	for(double i=0.3;i<=6.59;i+=0.629){
 		x= inradius * cos(i);
@@ -36,7 +35,6 @@ void ballon(int radius1,int radius2,int cx,int cy){
 	float th;
 	float x,y;
 	glLineWidth(2);
-//	glColor3f(0.5,.2,.4);
 	glColor3f(1,1,0);
 	glBegin(GL_POLYGON);
 	for(double i=0.27;i<=6.8;i+=.3){
@@ -47,26 +45,9 @@ void ballon(int radius1,int radius2,int cx,int cy){
 	glEnd();
 
 }
-//void reshape(int w, int h)
-//{
-//   glViewport(0, 0, (GLsizei) w, (GLsizei) h);
-//   glMatrixMode(GL_PROJECTION);
-//   glLoadIdentity();
-//   if (w <= h)
-//        glOrtho(-200.0, 200.0, -200.0*(GLfloat)h/(GLfloat)w,
-//        200.0*(GLfloat)h/(GLfloat)w, -200.0, 200.0);
-//   else
-//        glOrtho(-200.0*(GLfloat)w/(GLfloat)h,
-//    	200.0*(GLfloat)w/(GLfloat)h, -200.0, 200.0, -200.0, 200.0);
-//
-//    glMatrixMode(GL_MODELVIEW);
-//    glLoadIdentity();
-//}
 void drawCircle(int radius,int cx,int cy){
 	float x,y;
 	glPointSize(5);
-//	glColor3f(0.5,.2,.4);
-//	glColor3f(1,1,0);
 	glBegin(GL_POLYGON);
 	for(double i=0;i<=6.29;i+=.1){
 		x= radius * cos(i);
@@ -78,17 +59,10 @@ void drawCircle(int radius,int cx,int cy){
 
 void init(){
 glClearColor(1.0,1.0,1.0,0.0);
-//glShadeModel(GL_FLAT);
 glMatrixMode(GL_PROJECTION);
 //glLoadIdentity();
 glOrtho(-300,300,-200,200,-200,200);
-// glFrustum(-300.0,300.0,-200.0,200.0,10,100);
-//gluPerspective(170.0, 1.5, 1.0, 100.0);
-//glEnable(GL_DEPTH_TEST)
 glMatrixMode(GL_MODELVIEW);
-//glEnable(GL_DEPTH_TEST);
-//glLoadIdentity();
-//gluLookAt(0,0,-6,0,0,-10,0.0,1.0,0.0);
 }
 
 void baseStand(){
@@ -98,8 +72,6 @@ glColor3f(0.5,0.7,0.8);
 glBegin(GL_LINES); //
 glVertex3f(0,50,0);
 glVertex3f(-30,-80,0);
-//glVertex3f(0,50,0);
-//glVertex3f(0,-80,0);
 glVertex3f(0,50,0);
 glVertex3f(30,-80,0);
 glVertex3f(30,-80,0);
@@ -110,9 +82,6 @@ glVertex3f(-19,-30,0);
 glVertex3f(9,7.5,0);
 glVertex3f(19,-30,0);
 glVertex3f(-9,7.5,0);
-// glVertex3f(0,50,0);
-// glVertex3f(0,-80,0);
-// glLineWidth(20);
 glColor3f(0.2,0.3,0.3);
 glVertex3f(30+10,-80,0);
 glVertex3f(-30-10,-80,0);
@@ -128,7 +97,6 @@ void chamber(){
 	glScalef(0.5,0.5,0);
 	glLineWidth(5.0);
 	glBegin(GL_LINES);
-//	glColor3f(1.0,1.0,0.0);
 	switch (col % 5) {
 	case 0:
 		glColor3f(0.0, 0.5, 1.0);  /* Sky blue */
@@ -162,16 +130,6 @@ void chamber(){
 	glVertex2i(78.5,70);
 	glEnd();
 	col++;
-//	glColor3f(1.0,0.0,0.0);
-//	glBegin(GL_LINES);
-//	glVertex2i(78.5,110);
-//	glVertex2i(122.5,110);
-//	glColor3f(1,1,0);
-//	glVertex2i(78.5,105);
-//	glVertex2i(122.5,105);
-//	glEnd();
-
-	////
 	glColor3f(0,0,0);
 	glBegin(GL_LINES);
 	glVertex2f(76.5,110);
@@ -244,14 +202,6 @@ glVertex3f(-300,200,-20);
 glVertex3f(300,200,-20);
 glEnd();
 
-// BALOONS
-//glPushMatrix();
-//ballon(15,30,80,100);
-//glRotatef(35,0,0,-1);
-//ballon(15,30,80,100);
-//glRotatef(35,0,0,-1);
-//ballon(15,30,80,100);
-//glPopMatrix();
 // Moon
 glPushMatrix();
 glTranslatef(30,30,0);
@@ -260,31 +210,13 @@ drawCircle(20,150,100);
 glColor3f(0,0.1,0.1);
 drawCircle(20,160,110);
 glPopMatrix();
-//Stars
-//glBegin(GL_POINTS);
-//glVertex3f(-200,100,0);
-//glVertex3f(-220,130,0);
-//glVertex3f(180,160,0);
-//glVertex3f(100,100,0);
-//glEnd();
 
+//Tent
 tent();
-///////////////
-
-
+	
 glPushMatrix();//<2>
 glTranslatef(0,0,-20);
-// glPointSize(10);
-// glBegin(GL_POINTS);
-// glVertex3f(0,0,-10);
-// glEnd();
-
-
-
-
-
 glPushMatrix();//<3>
-
 glTranslatef(0,50,0);
 glRotatef(angle,0,0,1);
 glTranslatef(0,-50,0);
@@ -307,13 +239,7 @@ for(int i=0;i<5;i++){
 
 glPushMatrix();//<5>
 glRotatef(180,0,0,1);
-//static float r=0,g=0,b=0;
 glTranslatef(-50,-40,0);
-//glColor3f(r,g,b);
-//r+=0.2;
-//g+=.1;
-//b+=.3;
- //Moon
 
 chamber();
 glPopMatrix();//</5>
@@ -326,13 +252,7 @@ for(int i=0;i<5;i++){
 	glTranslatef(0,50,0);
 	glRotatef(36*i,0,0,1);
 	glTranslatef(0,-50,0);
-
-	// glLineWidth(5);
-	// glBegin(GL_LINES);
-	// glVertex3f(0,130,0);
-	// glVertex3f(0,-30,0);
-	// glEnd();
-
+	
 	glTranslatef(0,130,0);
 	glRotatef(36*i,0,0,-1);
 	glTranslatef(0,-130,0);
@@ -386,16 +306,7 @@ glutInitWindowSize(1200,800);
 glutCreateWindow("Ferries Wheel");
 init();
 glutDisplayFunc(Display);
-//glutReshapeFunc(reshape);
 glutIdleFunc(idle);
-
-//glMatrixMode(GL_MODELVIEW);
-//glLoadIdentity();
-//gluLookAt(0,0,20,0,0,0,0.0,1.0,0.0);
-//glMatrixMode(GL_PROJECTION);
-//glLoadIdentity();
-//gluPerspective(60.0, 1.0, 1.5, 2.0);
-//glFrustum(-150,150,-150,150,2,100);
 glutMainLoop();
 return 0;
 }
