@@ -1,9 +1,3 @@
-//New Updated Ferris Wheel
-
-
-
-// Final Giant Wheel
-
 
 #include<GL/freeglut.h>
 #include<iostream>
